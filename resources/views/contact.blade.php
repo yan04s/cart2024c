@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Welcome</p>
+    <p>Welcome to Southern University College</p>
 </body>
 </html>

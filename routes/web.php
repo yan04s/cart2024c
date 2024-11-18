@@ -9,3 +9,5 @@ Route::get('/', function () {
 Route::get('/contactUs', function () {
     return view('contact');
 });
+//Model View Controller (MVC) 
+//View: UI/ html

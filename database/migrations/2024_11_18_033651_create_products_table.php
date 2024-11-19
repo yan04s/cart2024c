@@ -19,7 +19,7 @@ return new class extends Migration
             $table->double('price', 8, 2);//digit, decimal
             $table->string('image');
             $table->integer('quantity')->unsigned();// positive integer //signed() is default and can be negative integer // https://www.ibm.com/docs/en/aix/7.2?topic=types-signed-unsigned-integers
-            $table->foreignId('categoryID');//->constrained()->onDelete('cascade');//categoryID is the column name in the products table
+            $table->string('categoryID');//->constrained()->onDelete('cascade');//categoryID is the column name in the products table
             $table->timestamps();
         });
     }

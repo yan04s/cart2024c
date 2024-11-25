@@ -5,8 +5,8 @@
     <div class="col-sm-6">
         <br><br>
         <h3>Add New Product</h3>
-        <form action="" method="post" enctype='multipart/form-data' >
-            
+        <form action="{{route('addProduct')}}" method="post" enctype='multipart/form-data' >
+            @csrf
             <div class="form-group">
 				<label for="productname">Product Name</label>
 				<input class="form-control" type="text" id="productName" name="productName" required>

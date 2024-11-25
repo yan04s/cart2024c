@@ -7,5 +7,6 @@
 </head>
 <body>
     <p>Welcome to Southern University College</p>
+    <p>Contact Us: 075586605</p>
 </body>
 </html>

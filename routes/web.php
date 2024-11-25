@@ -11,3 +11,7 @@ Route::get('/contactUs', function () {
 });
 //Model View Controller (MVC) 
 //View: UI/ html
+
+Route::get('/addProduct', function () {
+    return view('addProduct');
+});

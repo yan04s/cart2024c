@@ -30,7 +30,7 @@
             <div class="form-group">
 				<label for="Category">Category</label>
 				<select name="CategoryID" id="CategoryID" class="form-control">
-                    
+               
 				</select>  
             </div>
             <button type="submit" class="btn btn-primary">Add New</button>            

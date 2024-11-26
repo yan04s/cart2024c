@@ -1,3 +1,5 @@
+@extends('layout')
+@section('content')
 
 <div class="row">
     <div class="col-sm-2"></div>
@@ -17,18 +19,18 @@
                 </tr>
             </thead>
             <tbody>
-               
-                <tr>
-                    <td></td>
-                    <td><img src="" alt="" width="100" class="img-fluid"></td>
-                    <td></td>
-                    <td></td>
-                    <td>RM</td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="" class="btn btn-warning btn-xs">Edit</a>&nbsp;<a href="" class="btn btn-danger btn-xs" onClick="return confirm('')">Delete</a></td>
-                </tr>
-                
+               foreach($products as $product)
+                    <tr>
+                        <td>{{$product->id}}</td>
+                        <td><img src="" alt="" width="100" class="img-fluid"></td>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->description}}</td>
+                        <td>RM{{$product->price}}</td>
+                        <td>{{$product->quantity}}</td>
+                        <td>{{$product->categoryID}}</td>
+                        <td><a href="" class="btn btn-warning btn-xs">Edit</a>&nbsp;<a href="" class="btn btn-danger btn-xs" onClick="return confirm('')">Delete</a></td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -37,4 +39,5 @@
     <div class="col-sm-6"></div>
 </div>
 
+@endsection
 

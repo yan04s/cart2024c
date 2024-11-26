@@ -19,7 +19,8 @@ class ProductController extends Controller
             'categoryID'=>'1',//$request->CategoryID,
             'image'=>'empty.png',
         ]);
-        return view('addProduct');
+        //return view('addProduct');
+        return redirect()->route('showProduct');
     }
 
     public function show(){

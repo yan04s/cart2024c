@@ -18,7 +18,7 @@
                     <td>Action</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody><!-- "php artisan optimize" clear cache -->
                @foreach($products as $product)
                     <tr>
                         <td>{{$product->id}}</td>

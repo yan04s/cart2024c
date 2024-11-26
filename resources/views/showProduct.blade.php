@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-               foreach($products as $product)
+               @foreach($products as $product)
                     <tr>
                         <td>{{$product->id}}</td>
                         <td><img src="" alt="" width="100" class="img-fluid"></td>

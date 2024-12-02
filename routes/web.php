@@ -19,3 +19,5 @@ Route::get('/addProduct', function () {
 Route::post('/addProduct/store', [ProductController::class, 'add'])->name('addProduct');
 Route::get('/showProduct', [ProductController::class, 'show'])->name('showProduct');
 
+
+Route::get('/editProduct/{id}', [ProductController::class, 'edit'])->name('editProduct');

@@ -27,4 +27,9 @@ class ProductController extends Controller
         $viewProduct=Product::all();// SQL: SELECT * FROM PRODUCTS 
         return view('showProduct')->with('products',$viewProduct); //products = $viewProduct
     }
+
+    public function edit($id){
+        $editProduct=Product::all()->where('id',$id);// SQL: SELECT * FROM PRODUCTS WHERE ID='$id'
+        return view('editProduct')->with('products',$editProduct);
+    }
 }

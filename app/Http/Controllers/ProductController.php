@@ -40,7 +40,7 @@ class ProductController extends Controller
         $updateProduct->price=$request->productPrice;
         $updateProduct->quantity=$request->productQuantity;
         $updateProduct->description=$request->productDescription;
-        $updateProduct->save();
+        $updateProduct->save();// UPDATE PRODUCTS SET NAME='$productName', PRICE='$productPrice', QUANTITY='$productQuantity', DESCRIPTION='$productDescription' WHERE ID='$id'
         return redirect()->route('showProduct');
     }
 }

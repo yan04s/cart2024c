@@ -32,4 +32,15 @@ class ProductController extends Controller
         $editProduct=Product::all()->where('id',$id);// SQL: SELECT * FROM PRODUCTS WHERE ID='$id'
         return view('editProduct')->with('products',$editProduct);
     }
+
+    public function update(Request $request){
+        //$r=request();
+        $updateProduct=Product::find($request->id);
+        $updateProduct->name=$request->productName;
+        $updateProduct->price=$request->productPrice;
+        $updateProduct->quantity=$request->productQuantity;
+        $updateProduct->description=$request->productDescription;
+        $updateProduct->save();
+        return redirect()->route('showProduct');
+    }
 }

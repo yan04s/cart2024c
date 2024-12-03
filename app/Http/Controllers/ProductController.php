@@ -43,4 +43,10 @@ class ProductController extends Controller
         $updateProduct->save();// UPDATE PRODUCTS SET NAME='$productName', PRICE='$productPrice', QUANTITY='$productQuantity', DESCRIPTION='$productDescription' WHERE ID='$id'
         return redirect()->route('showProduct');
     }
+
+    public function delete($id){
+        $deleteProduct=Product::find($id);
+        $deleteProduct->delete();// DELETE FROM PRODUCTS WHERE ID='$id'
+        return redirect()->route('showProduct');
+    }
 }

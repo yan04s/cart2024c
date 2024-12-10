@@ -5,7 +5,7 @@
     <div class="col-sm-6">
         <br><br>
         <h3>Edit Product</h3>
-        <form action="{{route('updateProduct')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('updateProduct')}}" method="POST" enctype="multipart/form-data"> <!--enctype for upload file-->
             @CSRF
             @foreach($products as $product)
             <div class="form-group">

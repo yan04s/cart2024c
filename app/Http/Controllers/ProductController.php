@@ -41,7 +41,7 @@ class ProductController extends Controller
         $updateProduct->quantity=$request->productQuantity;
         $updateProduct->description=$request->productDescription;
         if($request->hasFile('productImage')){//$r->file('productImage')!=''
-            $image=$request->file('productImage');
+            $image=$request->file('productImage');// image->check('productImage')?? check file size
             $image->move('images',$image->getClientOriginalName());
             $updateProduct->image=$image->getClientOriginalName();//'images/'.
         }
@@ -53,5 +53,10 @@ class ProductController extends Controller
         $deleteProduct=Product::find($id);
         $deleteProduct->delete();// DELETE FROM PRODUCTS WHERE ID='$id'
         return redirect()->route('showProduct');
+    }
+
+    public function detail($id){
+        $productDetail=Product::all()->where('id',$id);// SQL: SELECT * FROM PRODUCTS WHERE ID='$id'
+        return view('productDetail')->with('products',$productDetail);
     }
 }

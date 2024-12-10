@@ -43,7 +43,7 @@ class ProductController extends Controller
         if($request->hasFile('productImage')){//$r->file('productImage')!=''
             $image=$request->file('productImage');
             $image->move('images',$image->getClientOriginalName());
-            $updateProduct->image='images/'.$image->getClientOriginalName();
+            $updateProduct->image=$image->getClientOriginalName();//'images/'.
         }
         $updateProduct->save();// UPDATE PRODUCTS SET NAME='$productName', PRICE='$productPrice', QUANTITY='$productQuantity', DESCRIPTION='$productDescription' WHERE ID='$id'
         return redirect()->route('showProduct');

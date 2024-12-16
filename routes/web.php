@@ -26,3 +26,7 @@ Route::post('/updateProduct', [ProductController::class, 'update'])->name('updat
 Route::get('/deleteProduct/{id}', [ProductController::class, 'delete'])->name('deleteProduct');
 
 Route::get('/productDetail/{id}', [ProductController::class, 'detail'])->name('productDetail');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

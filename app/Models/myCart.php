@@ -3,9 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Product;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class myCart extends Model
 {
+    use HasFactory;
+
     protected $fillable = ['productID', 'userID', 'quantity', 'orderID'];
 
     public function product()

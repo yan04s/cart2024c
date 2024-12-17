@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CartController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +28,8 @@ Route::post('/updateProduct', [ProductController::class, 'update'])->name('updat
 Route::get('/deleteProduct/{id}', [ProductController::class, 'delete'])->name('deleteProduct');
 
 Route::get('/productDetail/{id}', [ProductController::class, 'detail'])->name('productDetail');
+
+Route::post('/addCart', [CartController::class, 'search'])->name('addCart');
 
 Auth::routes();
 

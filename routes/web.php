@@ -29,7 +29,7 @@ Route::get('/deleteProduct/{id}', [ProductController::class, 'delete'])->name('d
 
 Route::get('/productDetail/{id}', [ProductController::class, 'detail'])->name('productDetail');
 
-Route::post('/addCart', [CartController::class, 'search'])->name('addCart');
+Route::post('/addCart', [CartController::class, 'addCart'])->name('addCart');
 
 Auth::routes();
 

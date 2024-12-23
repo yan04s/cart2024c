@@ -19,7 +19,6 @@ class PaymentController extends Controller
                 "description" => "This payment is testing purpose of southern online",
         ]);
            
-        //return back();
-        return;
+        return back();
     }
 }

@@ -20,5 +20,6 @@ class PaymentController extends Controller
         ]);
            
         //return back();
+        return redirect()->route('myCart');
     }
 }

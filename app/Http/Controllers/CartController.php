@@ -36,7 +36,7 @@ class CartController extends Controller
         ->where('my_carts.userID','=',Auth::id())
         ->where('my_carts.orderID', '=', '')
         ->get();
-        return view('myCart')->with('carts',$carts);
+        return view('myCart')->with('products',$carts);
     }
     
 }

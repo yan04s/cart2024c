@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,6 +32,8 @@ Route::get('/productDetail/{id}', [ProductController::class, 'detail'])->name('p
 
 Route::post('/addCart', [CartController::class, 'addCart'])->name('addCart');
 Route::get('/myCart', [CartController::class, 'view'])->name('myCart');
+
+Route::post('/checkout', [PaymentController::class, 'paymentPost'])->name('payment.post');
 
 Auth::routes();
 

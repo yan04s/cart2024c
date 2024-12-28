@@ -62,6 +62,6 @@ class ProductController extends Controller
 
     public function view(){
         $viewProduct=Product::all();// SQL: SELECT * FROM PRODUCTS 
-        return view('viewProduct')->with('products',$viewProduct); //products = $viewProduct
+        return view('viewProducts')->with('products',$viewProduct); //products = $viewProduct
     }
 }

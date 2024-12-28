@@ -36,6 +36,7 @@ Route::get('/myCart', [CartController::class, 'view'])->name('myCart');
 Route::post('/checkout', [PaymentController::class, 'paymentPost'])->name('payment.post');
 
 Route::get('/viewProduct', [ProductController::class, 'view'])->name('viewProduct');
+Route::post('/searchProduct', [ProductController::class, 'search'])->name('searchProduct');
 
 Auth::routes();
 

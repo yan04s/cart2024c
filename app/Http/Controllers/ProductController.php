@@ -77,6 +77,6 @@ class ProductController extends Controller
         }
 
         // Pass the filtered products to the view
-        return view('viewProducts')->with('products', $viewProduct);
+        return view('viewProducts')->with('products', $viewProduct)->with('keyword', $keyword);
     }
 }

@@ -60,8 +60,16 @@ class ProductController extends Controller
         return view('productDetail')->with('products',$productDetail);
     }
 
-    public function view(){
-        $viewProduct=Product::all();// SQL: SELECT * FROM PRODUCTS 
-        return view('viewProducts')->with('products',$viewProduct); //products = $viewProduct
+    public function view(Request $request){
+
+        $search = $request->input('search'); // Get the search term from the request
+
+        // If a search term is provided, filter the products by name
+        if ($search) {
+            $viewProduct = Product::where('name', 'LIKE', "%$search%")->get();
+        } else {
+            $viewProduct = Product::all(); // Otherwise, get all products // SQL: SELECT * FROM PRODUCTS 
+        }
+        return view('viewProducts')->with('products',$viewProduct)->with('search', $search); //products = $viewProduct
     }
 }

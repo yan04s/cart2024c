@@ -35,6 +35,8 @@ Route::get('/myCart', [CartController::class, 'view'])->name('myCart');
 
 Route::post('/checkout', [PaymentController::class, 'paymentPost'])->name('payment.post');
 
+Route::get('/viewProduct', [ProductController::class, 'view'])->name('viewProduct');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -22,7 +22,7 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$product->name}}</h5>
-                                    <a href="{{ route('product.detial',['id'=>$product->id])}}"><img src="{{asset('images/')}}/{{$product->image}}" alt="{{$product->name}}" class="img-fluid"></a>
+                                    <a href="{{ route('productDetail',['id'=>$product->id])}}"><img src="{{asset('images/')}}/{{$product->image}}" alt="{{$product->name}}" class="img-fluid"></a>
                                     <div class="card-heading">RM {{$product->price}} <button style="float:right;" class="btn btn-danger btn-xs">AddToCart</button>
                                     </div>
                                 </div>

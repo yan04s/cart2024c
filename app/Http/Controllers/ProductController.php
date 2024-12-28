@@ -62,21 +62,14 @@ class ProductController extends Controller
 
     public function view(Request $request){
 
-        // Get the search keyword
-        $keyword = $request->input('keyword');
+        $search = $request->input('search'); // Get the search term from the request
 
-        // Fetch products based on the keyword
-        if ($keyword) {
-            // Search for products where the name or description matches the keyword
-            $viewProduct = Product::where('name', 'like', "%{$keyword}%")
-                ->orWhere('description', 'like', "%{$keyword}%")
-                ->get();
+        // If a search term is provided, filter the products by name
+        if ($search) {
+            $viewProduct = Product::where('name', 'LIKE', "%$search%")->get();
         } else {
-            // If no keyword, fetch all products
-            $viewProduct = Product::all();
+            $viewProduct = Product::all(); // Otherwise, get all products // SQL: SELECT * FROM PRODUCTS 
         }
-
-        // Pass the filtered products to the view
-        return view('viewProducts')->with('products', $viewProduct);
+        return view('viewProducts')->with('products',$viewProduct)->with('search', $search); //products = $viewProduct
     }
 }

@@ -30,7 +30,17 @@ class PaymentController extends Controller
             'amount'=>$request->sub
         ]);
         $orderID=DB::table('my_orders')->where('userID',Auth::id())->orderBy('created_at','desc')->first();//->id //get last record from the user
-           
+        
+        $items=$request->input('cid', []);
+        foreach($items as $item){ //$item->$value
+            DB::table('my_carts')
+            ->where('id',$item)
+            ->update(['orderID'=>$orderID->id]);
+            //$carts=myCart::find($value);
+            //$carts->orderID=$orderID->id;
+        }
+            //$carts->save();
+            
         return back();
     }
 }

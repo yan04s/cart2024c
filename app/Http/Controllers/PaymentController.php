@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 use Stripe\Stripe;
 use Stripe\Charge;
 use Illuminate\Support\Facades\Auth;
+use App\Models\myCart;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\orderPaid;
 
 
 
@@ -40,7 +43,11 @@ class PaymentController extends Controller
             //$carts->orderID=$orderID->id;
         }
             //$carts->save();
-            
+        
+            $email='tan828825@gmail.com';
+            Notification::route('mail', $email)->notify(new orderPaid($email));
+        
+        
         return back();
     }
 }
